@@ -1,0 +1,23 @@
+name: sync-$(BuildId)
+
+resources:
+  repositories:
+  - repository: TestingTriggers
+    type: git
+    name: TestingTriggers
+    trigger: none
+
+trigger:
+- main
+- feature/*
+
+pr:
+- main
+
+
+steps:
+- checkout: self
+  clean: true
+- checkout: TestingTriggers
+  clean: true
+- script: echo Hello.
