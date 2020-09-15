@@ -1,5 +1,7 @@
 name: sync-$(BuildId)
-
+variables:
+  system.debug: true
+  
 resources:
   repositories:
   - repository: TestingTriggers
